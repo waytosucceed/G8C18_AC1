@@ -1,0 +1,218 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <link rel="icon" type="image/x-icon" href="Logo_last.png">
+      
+        <style>
+          
+          #storydiv { 
+                height: 100%;
+                position: relative;         
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 1.5vw;
+                border-radius: 20px;
+            }
+
+            #imgdiv{
+                position:relative;
+            }
+            .table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-size: 18px;
+        }
+        th,td{
+            padding: 14px;
+            text-align: start;
+        }
+         th{
+            color: red;
+
+         }
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <h2 id="about"><i>The Shed </i></h2>
+            <div class="maindiv container-fluid" style="height:60%;">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv">
+                   <img id="family" src="intro.jpg" style="width:100%;"> 
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" id='storydiv'>
+                   <p id="story" style="text-align:left; width:100%;"> 
+                    Contractions are made in the following pairs:<br><br>1. Pronouns and Primary helping verbs<br>2. Pronouns and Modals<br>3. Primary Helping verbs and NOT<br>4. Modals and NOT <br>5. Modals and Primary helping Verbs<br>6. Contractions can come after <u>names, nouns, question words, and the words "here, there, and now.</u>"<br>7.Transitive Verb and Pronoun: Exception!
+
+                </p> 
+            </div>
+        </center>     
+        </div>
+        <br>
+        <div class="" style="text-align:center;">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+           
+                  
+        </div>
+     
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg","Assets/7.jpg","Assets/8.jpg","Assets/9.jpg","Assets/10.jpg","Assets/11.jpg","Assets/12.jpg","Assets/13.jpg","Assets/14.jpg","Assets/15.jpg","Assets/16.jpg","Assets/17.jpg","Assets/18.jpg","Assets/19.jpg","Assets/20.jpg","Assets/21.jpg","Assets/22.jpg","Assets/23.jpg","Assets/24.jpg","Assets/25.jpg"];
+
+            var para=[ "Let us consider the first line of the poem:<br><br><span style='color:blue'><i>“There’s a shed at the bottom of our garden”<br><br>‘There’s’</i></span> is the combination of ‘There’ and ‘is. The combination is made by dropping the letter ‘i’ in ‘is’ and  this contraction is indicated by an apostrophe before ‘s’. ‘There’ is an adverb of place and ‘is’ is a primary helping verb.",
+
+                       "How is Joseph? (How is a question word)<br><u>Contraction:</u> How’s Joseph?<br><br>Here is the bag you wanted. (We have seen an example with ‘there’ in the poem and ‘here’ is the opposite of there)<br><u>Contraction:</u> Here’s the bag you wanted.<br><br> Now is your chance.<br> <u>Contraction:</u> Now’s your chance. (Now’s is similar to here’s and there’s)",
+
+                        "Let us consider the fourth  line of the poem:<br><br><span style='color:blue'><i>“When I’m in bed I lie and I listen”<br><br>‘I’m’</i></span> is the combination of ‘I’ and ‘am’. The combination is made by dropping the letter ‘a’ in ‘am’ and  this contraction is indicated by an apostrophe before ‘m’. ‘I’ is a personal pronoun and ‘am’ is a primary helping verb. ",
+
+                       "<ol start='3'><li>I/You/We/They+have=I’ve/You’ve/We’ve/They’ve</li><li>She/He/It+has=She’s/He’s/It’s</li><li>All personal Pronouns + Had=That pronoun+’d</li></ol><br>(We/I/She/They+had=We’d/I’d/She’d/They’d)", 
+
+                       "Vowels only or the consonant preceding a vowel and the vowel togetherly are dropped to cause the contraction. The consequent dropping of a vowel sound makes communication faster, gives an informal touch to stories/creative writing or contributes to develop the rhyme and rhythm in poetry.",
+
+                       "Let us consider the first stanza’s last line:<br><br><span style='color:blue'><i>“I’ll open that door one day.”<br><br>I’ll’</i></span> is the contraction of I and shall. The combination is made by dropping the letters ‘sha’ in ‘will’ and  this contraction is indicated by an apostrophe before ‘ll’. ‘I’ is a personal pronoun and ‘shall’ is an auxiliary helping verb. ",
+
+                       "All personal Pronouns + Would =That pronoun+’d<br><br>(We/I/She/They+would=We’d/I’d/She’d/They’d)<br><br><span style='background-color:red;color:white;padding:2px'><i>Please note that, could and should are not contracted to “ ‘d ”</i></span>",
+
+                       "We have seen similar contractions in the first stanza.",
+
+                       "<span style='color:blue'><i>He’ll</i></span> is the contraction of  he and will.The combination is made by dropping the letters ‘wi’ in ‘will’ and  this contraction is indicated by an apostrophe before ‘ll’. ‘He’ is a personal pronoun and ‘will’ is an auxiliary helping verb.",
+
+                       "Let us consider the first line of the fourth stanza :<br><br><span style='color:blue'><i>“I know that there isn’t really a ghost”<br><br>Isn’t</i></span> is the contraction between ‘is’ and ‘not’.The combination is made by dropping the letter ‘o’ in ‘not’ and this contraction is indicated by an apostrophe before ‘t’. ‘Is’ is a primary helping verb and ‘not’ is the most commonly used negative word in the English language. ",
+
+                       "Apart from “am” All subject personal Pronouns + not =That pronoun+n’t<br><br>Please refer to ACTIVITY 2: Today’s Key Takeaways for examples for the above case.",
+
+                       " <ul style='color:blue'><li><u>The isn’t / aren’t contractions mostly come after nouns.</u></li></ul><br> For example:   1) The doctors aren’t prepared yet.<br><br> <ul style='color:blue'><li><u>The ’s / ’re not contractions mostly come after pronouns:</u></li></ul><br> For example:  2) He’s not a relative of mine.<br><br><span style='color:white;background-color:red;padding:2px'>Please note that there is no contraction of  “May Not” in the English Language.</span>",
+
+                       "<ul><li><u>The last model that we are going to look at for contractions in the English Language is the ‘Modal+Primary Helping Verb’ combination:</u></li></ul><br><ol><li><u>should/could + Have = should’ve + could’ve</li><li>Would + Have = ‘d’ve</u> <span style='background-color:red;color:white'>→</span> <span>Fine in speech and written dialogues but not in any other writing</li><ol><br><br>Please refer to ACTIVITY 2: Today’s Key Takeaways for more examples.",
+                       
+                       "<ul style='color:blue'><li>Transitive Verb + Pronoun: Exception !</li></ul><br><span style='color:white; background-color:red'>The only transitive verb with which contraction is possible is ‘Let’.<br> Let + us = Let’s</span>",
+
+                      
+                    ]
+                    
+
+            
+
+
+
+                    var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "";
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "The Shed ";
+                    document.getElementById("story").innerHTML = "<span style='color:blue'>The double contraction !</span><br><br>The double contraction, such as I'd've for I would have or mustn't've for must not have, is another kind of contraction that works well in speech but not in writing. Although these seem awkward and are theoretically allowed in informal talks, they should never be used in writing (again, unless they are part of dialogue)."
+                    
+                }
+                else{
+                    document.getElementById("story").style.fontSize="1.5vw"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="The Shed  "
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+          
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="1.35vw"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "intro.jpg";
+                    document.getElementById("about").innerHTML="The Shed "
+                    document.getElementById("story").innerHTML = "<p id='story' style='text-align:left; width:100%;'> Contractions are made in the following pairs:<br><br>1. Pronouns and Primary helping verbs<br>2. Pronouns and Modals<br>3. Primary Helping verbs and NOT<br>4. Modals and NOT <br>5. Modals and Primary helping Verbs<br>6. Contractions can come after <u>names, nouns, question words, and the words 'here, there, and now.</u>'<br>7.Transitive Verb and Pronoun: Exception!</p>"
+                }
+                else{
+                document.getElementById("story").style.fontSize="1.5vw"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                document.getElementById("about").innerHTML="The Shed  "
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
